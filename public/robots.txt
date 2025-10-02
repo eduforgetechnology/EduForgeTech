@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Allow all crawlers to access all content
+Sitemap: https://www.eduforge.co/sitemap.xml
+
+# Optimize crawl rate
+Crawl-delay: 10

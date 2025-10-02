@@ -291,7 +291,7 @@ const CompetitionSection = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 font-medium text-blue-600 transition-colors bg-white rounded-md hover:bg-blue-50 group"
               >
-                Learn More
+               Learn more about the Space Robotics Challenge
                 <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
               </a>
             </div>

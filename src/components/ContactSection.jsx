@@ -77,14 +77,8 @@ const ContactSection = () => {
     {
       icon: <Mail className="text-blue-600" />,
       title: "Email",
-      details: "lokesh.sharma@eduforge.in",
+      details: "lokesh@eduforge.co",
       link: "mailto:lokesh.sharma@eduforge.in"
-    },
-    {
-      icon: <Phone className="text-blue-600" />,
-      title: "Phone",
-      details: "+91 7505581796",
-      link: "tel:+917505581796"
     },
     {
       icon: <MapPin className="text-blue-600" />,
@@ -142,7 +136,7 @@ const ContactSection = () => {
               
               <div className="flex mt-12 space-x-4">
                 <a 
-                  href="https://facebook.com/eduforge"
+                  href="#"
                   className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all"
                   target="_blank" 
                   rel="noreferrer"
@@ -153,7 +147,7 @@ const ContactSection = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://twitter.com/eduforge"
+                  href="#"
                   className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all"
                   target="_blank" 
                   rel="noreferrer"
@@ -164,7 +158,7 @@ const ContactSection = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://linkedin.com/company/eduforge"
+                  href="#"
                   className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all"
                   target="_blank" 
                   rel="noreferrer"
@@ -175,7 +169,7 @@ const ContactSection = () => {
                   </svg>
                 </a>
                 <a 
-                  href="https://instagram.com/eduforge"
+                  href="#"
                   className="p-2 bg-white bg-opacity-20 rounded-full hover:bg-opacity-30 transition-all"
                   target="_blank" 
                   rel="noreferrer"

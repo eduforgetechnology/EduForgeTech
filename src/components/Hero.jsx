@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }} aria-hidden="true"></div>
       
       <div className="container relative z-10 px-4 mx-auto">
-        <div className="grid items-center grid-cols-1 gap-12 tablet:grid-cols-2 lg:grid-cols-2">
+        <div className="grid items-center grid-cols-1 gap-8 sm:gap-12 tablet:grid-cols-2 lg:grid-cols-2">
           {/* Left column: Text content */}
           <div className="max-w-lg mx-auto animate-slide-left lg:mx-0">
             <h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
@@ -80,27 +80,31 @@ const Hero = () => {
           
           {/* Right column: Image */}
           <div className="relative mx-auto lg:mr-0 animate-slide-right">
-            <div className="relative p-3 rounded-2xl bg-white shadow-xl animate-float" style={{ animationDuration: '8s' }}>
-              <OptimizedImage 
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                alt="Students collaborating on technology projects in a modern classroom environment" 
-                className="object-cover rounded-xl shadow-md"
-                width={600}
-                height={400}
-                priority={true} // This is a hero image, load it with priority
-                sizes="(max-width: 768px) 100vw, 600px" // Responsive sizes
-                loadingStyle="blur" // Use blur effect for loading
-              />
-              
-              {/* Stats cards floating on the image */}
-              <div className="absolute -bottom-6 -left-10 bg-white p-4 rounded-xl shadow-lg glass-effect">
-                <div className="text-3xl font-bold text-blue-600">150+</div>
-                <div className="text-sm text-gray-600">Expert Instructors</div>
+            <div className="relative p-2 sm:p-3 rounded-2xl bg-white shadow-xl animate-float" style={{ animationDuration: '8s' }}>
+              <div className="w-full overflow-hidden rounded-xl">
+                <OptimizedImage 
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format,compress&fit=contain&w=768&q=75"
+                  alt="Students collaborating on technology projects in a modern classroom environment" 
+                  className="object-contain w-full h-auto rounded-xl shadow-md"
+                  width={600}
+                  height={400}
+                  priority={true} // This is a hero image, load it with priority
+                  sizes="(max-width: 640px) 90vw, (max-width: 768px) 90vw, (max-width: 1024px) 600px, 600px" // More specific responsive sizes
+                  loadingStyle="blur" // Use blur effect for loading
+                  objectFit="contain" // Override to ensure the image is fully visible
+                  style={{ aspectRatio: '4/3', maxHeight: '400px' }} // Force aspect ratio
+                />
               </div>
               
-              <div className="absolute -top-6 -right-10 bg-white p-4 rounded-xl shadow-lg glass-effect">
-                <div className="text-3xl font-bold text-purple-600">98%</div>
-                <div className="text-sm text-gray-600">Success Rate</div>
+              {/* Stats cards floating on the image */}
+              <div className="absolute -bottom-6 left-0 sm:-left-10 bg-white p-3 sm:p-4 rounded-xl shadow-lg glass-effect">
+                <div className="text-xl sm:text-3xl font-bold text-blue-600">150+</div>
+                <div className="text-xs sm:text-sm text-gray-600">Expert Instructors</div>
+              </div>
+              
+              <div className="absolute -top-6 right-0 sm:-right-10 bg-white p-3 sm:p-4 rounded-xl shadow-lg glass-effect">
+                <div className="text-xl sm:text-3xl font-bold text-purple-600">98%</div>
+                <div className="text-xs sm:text-sm text-gray-600">Success Rate</div>
               </div>
             </div>
             

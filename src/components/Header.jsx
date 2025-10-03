@@ -70,23 +70,23 @@ const Header = ({ activeSection }) => {
       role="banner"
       aria-label="Main site header"
     >
-      <div className="container flex items-center justify-between px-4 mx-auto">
+      <div className="container flex items-center justify-between px-2 sm:px-4 md:px-6 lg:px-8 mx-auto">
         <div className="flex items-center flex-shrink-0">
           <a href="#hero" className="flex items-center" aria-label="EduForge Home">
             <img 
               src="/logo1.svg" 
               alt="Edu Forge Logo" 
-              className="w-auto h-14 md:h-16"
-              width="160"
-              height="64"
-              style={{ minWidth: "140px" }}
+              className="w-auto h-12 sm:h-14 md:h-16 tablet:h-14 lg:h-16"
+              width="140"
+              height="56"
+              style={{ minWidth: "100px" }}
             />
           </a>
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:block tablet:block" aria-label="Main Navigation">
-          <ul className="flex items-center space-x-4 lg:space-x-6 xl:space-x-8" role="menubar">
+        <nav className="hidden sm:block" aria-label="Main Navigation">
+          <ul className="flex flex-wrap items-center space-x-2 sm:space-x-4 md:space-x-6 lg:space-x-8 xl:space-x-8" role="menubar">
             {navLinks.map((link, index) => (
               <li key={index} className="relative" role="none">
                 {link.dropdown ? (
@@ -175,7 +175,7 @@ const Header = ({ activeSection }) => {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="p-2 md:hidden tablet:hidden rounded-md hover:bg-gray-100 transition-colors"
+          className="p-2 sm:hidden rounded-md hover:bg-gray-100 transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
@@ -193,13 +193,13 @@ const Header = ({ activeSection }) => {
         <>
           {/* Backdrop overlay */}
           <div 
-            className="fixed inset-0 z-30 bg-black bg-opacity-50 md:hidden tablet:hidden" 
+            className="fixed inset-0 z-30 bg-black bg-opacity-50 sm:hidden" 
             onClick={closeMenu}
             aria-hidden="true"
           ></div>
           
           {/* Menu Panel */}
-          <div className="fixed inset-y-0 right-0 z-40 w-full max-w-sm overflow-y-auto bg-white md:hidden tablet:hidden shadow-xl transform transition-transform duration-300 ease-in-out">
+          <div className="fixed inset-y-0 right-0 z-40 w-full max-w-sm overflow-y-auto bg-white sm:hidden shadow-xl transform transition-transform duration-300 ease-in-out">
             {/* Close button positioned in the top right corner */}
             <button 
               className="absolute top-6 right-6 p-2 text-gray-700 hover:text-blue-600 focus:outline-none z-50 bg-white shadow-md rounded-full transition-transform hover:scale-110 active:scale-95 border border-gray-100"

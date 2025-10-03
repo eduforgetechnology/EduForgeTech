@@ -15,6 +15,7 @@ import { useState, useEffect, useRef } from 'react';
  * @param {boolean} props.priority - Whether image should load with high priority (for LCP images)
  * @param {string} props.sizes - Sizes attribute for responsive images
  * @param {number} props.quality - Image quality (1-100)
+ * @param {string} props.objectFit - CSS object-fit property ('cover', 'contain', etc.)
  * @returns {JSX.Element} Optimized image component
  */
 const OptimizedImage = ({ 
@@ -27,7 +28,8 @@ const OptimizedImage = ({
   loadingStyle = "blur", // "blur" or "skeleton"
   priority = false, // Set to true for above-the-fold images
   sizes = '100vw', // Default sizes attribute for responsive images
-  quality = 75 // Image quality (1-100)
+  quality = 75, // Image quality (1-100)
+  objectFit = 'cover' // CSS object-fit property
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
@@ -200,7 +202,7 @@ const OptimizedImage = ({
           sizes={sizes}
           alt={alt || 'Image'} // Always provide alt text for accessibility and SEO
           className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-          style={{ width, height, objectFit: 'cover' }}
+          style={{ width, height, objectFit }}
           loading={priority ? "eager" : "lazy"}
           onLoad={handleLoad}
           onError={handleError}

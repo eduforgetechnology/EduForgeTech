@@ -44,14 +44,14 @@ const AboutSection = () => {
           <div className="relative animate-on-scroll">
             <div className="relative z-10 overflow-hidden rounded-lg shadow-xl animate-float" style={{ animationDuration: '8s' }}>
               <OptimizedImage 
-                src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" 
-                fallbackSrc="https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format,compress&fit=crop&w=600&q=85" 
+                fallbackSrc="https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format,compress&fit=crop&w=600&q=85"
                 alt="Robotics Vision System" 
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg max-w-full object-cover object-center"
                 width={600}
                 height={400}
                 priority={true} // This is an above-the-fold image, load it with priority
-                sizes="(max-width: 768px) 100vw, 600px"
+                sizes="(max-width: 640px) 95vw, (max-width: 768px) 90vw, (max-width: 1024px) 600px, 600px"
                 loadingStyle="blur"
                 quality={85}
               />

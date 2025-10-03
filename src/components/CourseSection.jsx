@@ -108,7 +108,7 @@ const CourseSection = () => {
       title: "Computer Vision Systems",
       category: "Coding & AI",
       description: "Develop advanced computer vision capabilities for robots to perceive and interact with their environment.",
-      image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80",
+      image: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format,compress&fit=crop&w=400&q=80",
       duration: "12 weeks",
       students: 980,
       rating: 4.7,
@@ -128,7 +128,7 @@ const CourseSection = () => {
 
   return (
     <section id="courses" className="py-20 bg-gray-50 scroll-mt-20">
-      <div className="container px-4 mx-auto">
+      <div className="container px-2 sm:px-4 md:px-6 lg:px-8 mx-auto">
         <div className="max-w-3xl mx-auto mb-16 text-center">
           <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-100 rounded-full">Our Specialized Robotics Courses</span>
           <h2 className="section-title">Build Your Future in Robotics with Our Expert-Led Programs</h2>
@@ -138,7 +138,7 @@ const CourseSection = () => {
         </div>
 
         {/* Category filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+  <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 overflow-x-auto tablet:gap-2" style={{scrollbarWidth:'none'}}>
           {categories.map((category, index) => (
             <button
               key={index}
@@ -154,7 +154,7 @@ const CourseSection = () => {
                   setTimeout(() => setIsLoading(false), 200);
                 }
               }}
-              className={`px-5 py-2 text-sm font-medium rounded-full transition-all ${
+              className={`px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-full transition-all ${
                 activeCategory === category
                   ? 'bg-blue-600 text-white'
                   : 'bg-white text-gray-700 hover:bg-gray-100'
@@ -173,24 +173,24 @@ const CourseSection = () => {
         )}
 
         {/* Courses grid */}
-        <div className={`grid grid-cols-1 gap-8 md:grid-cols-2 tablet:grid-cols-2 lg:grid-cols-3 ${isLoading ? 'hidden' : ''}`}>
+  <div className={`grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 tablet:grid-cols-2 lg:grid-cols-3 ${isLoading ? 'hidden' : ''}`}>
           {filteredCourses.map((course) => (
             <div 
               key={course.uniqueKey || course.id} 
               className="overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 animate-on-scroll"
             >
-              <div className="overflow-hidden h-48">
+              <div className="overflow-hidden h-40 sm:h-48 tablet:h-44 md:h-48 lg:h-56">
                 <OptimizedImage 
                   src={course.image}
-                  fallbackSrc={course.fallbackImage || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"}
+                  fallbackSrc={course.fallbackImage || "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format,compress&fit=crop&w=400&q=80"}
                   alt={course.title} 
-                  className="w-full h-full transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  style={{objectPosition:'center top'}} // Changed to center top to ensure better visibility
                   width="100%"
                   height="100%"
                   loadingStyle="skeleton"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   quality={75}
-                  // Only make the first few courses priority loading
                   priority={course.id <= 3}
                 />
               </div>
